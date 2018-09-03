@@ -7,8 +7,8 @@
 		
 		<aura:set attribute="actions" >
 			<lightning:buttonIcon iconName="utility:settings" title="Settings" alternativeText="Settings" onclick="{!c.onSettingsButtonPressed}"/>
-			<lightning:button label="Cancel" title="Cancel" onclick="{!c.onCancelPressed}"/>
-			<lightning:button variant="brand" label="Search" title="Search" onclick="{! c.onSearchPressed }"/>
+			<lightning:button label="Cancel" title="Cancel" onclick="{!c.onCancelButtonPressed}"/>
+			<lightning:button variant="brand" label="Search" title="Search" onclick="{! c.onSearchButtonPressed }"/>
 		</aura:set>
 
 		<lightning:input type="date" label="Date from" value="{!v.lowerDate}"/>
