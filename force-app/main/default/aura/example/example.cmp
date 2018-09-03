@@ -11,9 +11,9 @@
 			<lightning:button variant="brand" label="Search" title="Search" onclick="{! c.onSearchButtonPressed }"/>
 		</aura:set>
 
-		<lightning:input type="date" label="Date from" value="{!v.lowerDate}"/>
-		<lightning:input type="date" label="Date to" value="{!v.upperDate}"/>
-		<lightning:input type="search" label="Search term" value="{!v.searchTerm}"/>
+		<lightning:input aura:id="formField" type="date" label="Date from" value="{!v.lowerDate}"/>
+		<lightning:input aura:id="formField" type="date" label="Date to" value="{!v.upperDate}"/>
+		<lightning:input aura:id="formField" type="search" label="Search term" value="{!v.searchTerm}" required="true"/>
 
 	</lightning:card >
 	
