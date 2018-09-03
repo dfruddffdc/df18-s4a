@@ -4,17 +4,29 @@
 	},
 	
 	handleSearchButtonPress: function(component) {
-		var allValid = component
-			.find('formField')
-			.reduce(function (validSoFar, inputCmp) {
-				inputCmp.reportValidity();
-				return validSoFar && inputCmp.checkValidity();
-			}, true);
+		// Get form fields
+		var formFields = component.find('formField'),
+			invalidField;
+
+		// Update validity for all fields
+		formFields.forEach(function (formField) {
+			formField.reportValidity();
+		});
 		
-        if (allValid) {
+		// Find the first problem field (if any)
+		invalidField = formFields.find(function (formField) {
+			return !formField.checkValidity();
+		});
+		
+        if (!invalidField) {
+			// Report the success
 			this.showToast('success', 'Searched for "' + component.get('v.searchTerm') + '"');
         } else {
-            this.showToast('error', 'Resolve the form errors and try again.');
+			// Focus on the problem element so the user can deal with it
+			invalidField.focus();
+			
+			// Report the error
+			this.showToast('error', 'Resolve the form errors and try again.');
 		}
 	},
 	
