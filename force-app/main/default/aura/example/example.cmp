@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes" >
+	<aura:attribute name="lowerDate" type="Date" default="2018-09-25T00:00"/>
+	<aura:attribute name="upperDate" type="Date" default="2018-09-28T00:00" />
+	<aura:attribute name="searchTerm" type="string" />
+
+	<lightning:card title="Search" iconName="standard:search">
+		
+		<aura:set attribute="actions" >
+			<lightning:buttonIcon iconName="utility:settings" title="Settings" alternativeText="Settings" onclick="{!c.onSettingsButtonPressed}"/>
+			<lightning:button label="Cancel" title="Cancel" onclick="{!c.onCancelPressed}"/>
+			<lightning:button variant="brand" label="Search" title="Search" onclick="{! c.onSearchPressed }"/>
+		</aura:set>
+
+		<lightning:input type="date" label="Date from" value="{!v.lowerDate}"/>
+		<lightning:input type="date" label="Date to" value="{!v.upperDate}"/>
+		<lightning:input type="search" label="Search term" value="{!v.searchTerm}"/>
+
+	</lightning:card >
+	
+</aura:component>	
