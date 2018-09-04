@@ -7,7 +7,7 @@
 		
 		<aura:set attribute="actions" >
 			<lightning:buttonIcon iconName="utility:settings" title="Settings" alternativeText="Settings" onclick="{!c.onSettingsButtonPressed}"/>
-			<lightning:button label="Cancel" title="Cancel" onclick="{!c.onCancelButtonPressed}"/>
+			<lightning:button label="Clear" title="Clear" onclick="{!c.onClearButtonPressed}"/>
 			<lightning:button variant="brand" label="Search" title="Search" onclick="{! c.onSearchButtonPressed }"/>
 		</aura:set>
 

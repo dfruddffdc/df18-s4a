@@ -1,6 +1,10 @@
 ({
-	handleCancelButtonPress: function(component) {
-		this.showToast('info', 'Cancel button pressed');
+	handleClearButtonPress: function(component) {
+		component
+			.find('formField')
+			.forEach(function (formField) {
+				formField.set('v.value', null);
+			});
 	},
 	
 	handleSearchButtonPress: function(component) {

@@ -1,6 +1,6 @@
 ({
-    onCancelButtonPressed : function(component, event, helper) {
-		helper.handleCancelButtonPress(component);
+    onClearButtonPressed : function(component, event, helper) {
+		helper.handleClearButtonPress(component);
 	},
 	
 	onSearchButtonPressed : function(component, event, helper) {
