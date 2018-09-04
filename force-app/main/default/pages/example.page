@@ -1,0 +1,27 @@
+<apex:page docType="html-5.0" controller="ExampleController" lightningStylesheets="true">
+    <script>
+        (function (win) {
+            win.s4a = {
+                buttonPressed: function(buttonName) {
+                    alert(buttonName + ' button pressed');
+                }
+            };
+        })(this);
+	</script>
+	
+    <apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockSection columns="1">
+				<apex:input id="inputLowerDate" type="date" label="Date from" value="{!lowerDate}" />
+				<apex:input id="inputUpperDate" type="date" label="Date to" value="{!upperDate}"/>
+				<apex:input id="inputSearchTerm" type="search" label="Search term" value="{!searchTerm}" required="true"/>
+			</apex:pageBlockSection>
+
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Settings" immediate="true" onclick="return s4a.buttonPressed('Settings');" />
+                <apex:commandButton value="Clear" immediate="true" onclick="return s4a.buttonPressed('Clear');" />
+                <apex:commandButton value="Search" onclick="return s4a.buttonPressed('Search');" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
