@@ -1,26 +1,19 @@
 <apex:page docType="html-5.0" controller="ExampleController" lightningStylesheets="true">
-    <script>
-        (function (win) {
-            win.s4a = {
-                buttonPressed: function(buttonName) {
-                    alert(buttonName + ' button pressed');
-                }
-            };
-        })(this);
-	</script>
-	
     <apex:form >
 		<apex:pageBlock >
 			<apex:pageBlockSection columns="1">
-				<apex:input id="inputLowerDate" type="date" label="Date from" value="{!lowerDate}" />
-				<apex:input id="inputUpperDate" type="date" label="Date to" value="{!upperDate}"/>
-				<apex:input id="inputSearchTerm" type="search" label="Search term" value="{!searchTerm}" required="true"/>
+				<!-- Dates are in text format.
+				Although HTML5 input with type "Date" gives a nice DatePicker in some browsers,
+				the field label is not conveyed to screen readers. -->
+				<apex:input id="inputLowerDate" label="Date from (YYYY-MM-DD)" value="{!lowerDate}" />
+				<apex:input id="inputUpperDate" label="Date to (YYYY-MM-DD)" value="{!upperDate}"/>
+				<apex:input id="inputSearchTerm" label="Search term" value="{!searchTerm}" required="true"/>
 			</apex:pageBlockSection>
 
             <apex:pageBlockButtons location="bottom">
-                <apex:commandButton value="Settings" immediate="true" onclick="return s4a.buttonPressed('Settings');" />
-                <apex:commandButton value="Clear" immediate="true" onclick="return s4a.buttonPressed('Clear');" />
-                <apex:commandButton value="Search" onclick="return s4a.buttonPressed('Search');" />
+                <apex:commandButton value="Settings" immediate="true" onclick="console.log('Settings pressed');" />
+                <apex:commandButton value="Clear" immediate="true" onclick="console.log('Clear pressed');" />
+                <apex:commandButton value="Search" onclick="console.log('Search pressed');" />
             </apex:pageBlockButtons>
         </apex:pageBlock>
     </apex:form>
